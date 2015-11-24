@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div id="scoreboard" class="scoreboard">Score: 0</div>
+	<div id="high-scoreboard" class="high-scoreboard">High Score: 0</div>
+	<div id="modal-background" class="modal-background"></div>
+	<div id="modal" class="modal">
+		<div class="bold">Select your hero!</div>
+		<div class="hero-Select">
+			<div class="left"><img src="images/char-boy.png" alt="Boy" onClick="selectCharacter('char-boy');"></div>
+			<div class="right"><img src="images/char-cat-girl.png" alt="Cat Girl" onClick="selectCharacter('char-cat-girl');"></div>
+			<div class="clear"><img src="images/char-horn-girl.png" alt="Horn Girl" onClick="selectCharacter('char-horn-girl');"></div>
+			<div class="left"><img src="images/char-pink-girl.png" alt="Pink Girl" onClick="selectCharacter('char-pink-girl');"></div>
+			<div class="right"><img src="images/char-princess-girl.png" alt="Princess" onClick="selectCharacter('char-princess-girl');"></div>
+		</div>
+	</div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>

@@ -1,3 +1,75 @@
 body {
     text-align: center;
 }
+
+.modal {
+	display: inline;
+	position: fixed;
+	top: 50px;
+	left: 50%;
+	background-color: #eee;
+	border: 2px solid black;
+	width: 465px;
+	height: 510px;
+	margin-left: -254px;
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.modal-background {
+	display: inline;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	opacity: 0.4;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.hero-Select {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.invisible {
+	display: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.scoreboard {
+	color: white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	position: fixed;
+	top: 70px;
+	left: 50%;
+	margin-left: -245px;
+	font-size: 24px;
+	text-align: left;
+}
+
+.high-scoreboard {
+	color: white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	margin-left: -245px;
+	font-size: 24px;
+	text-align: left;
+}
