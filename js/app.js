@@ -78,26 +78,26 @@ Player.prototype.render = function() {
 Player.prototype.update = function() {
     // By calling the render function within the update function instead of during the runtime of handleInput we ensure that
     // the player moves at the same time as the enemies and collision detection is run.
-    // player.render applies any movements to the player or the player's score that have happened in the past dt.
+    // this.render applies any movements to the player or the player's score that have happened in the past dt.
     // Draw the score to the scoreboard.
-    document.getElementById("scoreboard").innerHTML = "Score: "+player.score;
+    document.getElementById("scoreboard").innerHTML = "Score: "+this.score;
     // Check if the current score is greater than the current high score.
-    if(player.highScore < player.score) {
+    if(this.highScore < this.score) {
         // New high score!
         // Set our current highScore to the player's highScore.
-        player.highScore = player.score;
+        this.highScore = this.score;
         // Draw the new highscore to the high score scoreboard.
-        document.getElementById("high-scoreboard").innerHTML = "High Score: "+player.highScore;
+        document.getElementById("high-scoreboard").innerHTML = "High Score: "+this.highScore;
     }
     // Draw the player's current location.
-    player.render();
+    this.render();
 };
 
 Player.prototype.reset = function() {
     // The player has either collided with an enemy or reached the safety of the water.
     // Reset them to our start location to go again!
-    player.x = 2;
-    player.y = 4;
+    this.x = 2;
+    this.y = 4;
 };
 
 // Move the player when one of the movement keys is released.
@@ -112,39 +112,39 @@ Player.prototype.handleInput = function(whichKey) {
             // The player pressed "up" or "w"
             // Special case: We need to check to see if they moved up to the water tile.
             // We use <= as a catchall in case something causes them to not register the water the first time, though this should not happen.
-            if(player.y <= 1) {
+            if(this.y <= 1) {
                 // The player reached the water!
                 // Add 1 point to the player's current score.
-                player.score = player.score + 1;
+                this.score = this.score + 1;
                 // Reset them to the start point.
-                player.reset();
+                this.reset();
             } else {
                 // The player moved up one tile, but hasn't reached the water yet.
-                player.y = player.y - 1;
+                this.y = this.y - 1;
             }
             break;
         case "down":
             // The player pressed "down" or "s"
             // Special Case: Ensure that the player isn't on the bottom tile.
-            if(player.y < 5) {
+            if(this.y < 5) {
                 // The player isn't on the bottom tile, so moving down is okay.
-                player.y = player.y + 1;
+                this.y = this.y + 1;
             }
             break;
         case "left":
             // The player pressed "left" or "a"
             // Special Case: Ensure that the player isn't on the leftmost tile.
-            if(player.x > 0) {
+            if(this.x > 0) {
                 // The player isn't on the leftmost tile, so moving left is okay.
-                player.x = player.x - 1;
+                this.x = this.x - 1;
             }
             break;
         case "right":
             // The player pressed "right" or "d"
             // Special Case: Ensure that the player isn't on the rightmost tile.
-            if(player.x < 4) {
+            if(this.x < 4) {
                 // The player isn't on the rightmost tile, so moving right is okay.
-                player.x = player.x + 1;
+                this.x = this.x + 1;
             }
             break;
     }
