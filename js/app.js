@@ -45,7 +45,7 @@ Enemy.prototype.update = function(dt) {
         // Create a new enemy to replace the removed one.
         allEnemies.push(new Enemy());
     }
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -65,7 +65,7 @@ var Player = function() {
     this.score = 0;
     // Our high score is also 0 to start.
     this.highScore = 0;
-}
+};
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
@@ -91,14 +91,14 @@ Player.prototype.update = function() {
     }
     // Draw the player's current location.
     player.render();
-}
+};
 
 Player.prototype.reset = function() {
     // The player has either collided with an enemy or reached the safety of the water.
     // Reset them to our start location to go again!
     player.x = 2;
     player.y = 4;
-}
+};
 
 // Move the player when one of the movement keys is released.
 Player.prototype.handleInput = function(whichKey) {
@@ -148,7 +148,7 @@ Player.prototype.handleInput = function(whichKey) {
             }
             break;
     }
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
